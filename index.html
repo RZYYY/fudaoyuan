@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> </title>
+<link rel="stylesheet"type="text/css"href="css/index.css" />
+<link rel="stylesheet"type="text/css"href="css/reset.css" />
+<script language="javascript" src="js/jquery-1.6.2.min.js"></script>
+<script language="javascript" src="js/index.js"></script>
+
+</head>
+
+<body>
+<script language="javascript">
+$(document).ready(function()
+{
+
+   var len=$("#flash_num>li").length;
+   var index=1;
+   var int;
+   function showSys(num)  //图片切换函数
+   {
+    $("#flash_num>li").removeClass().addClass("click_out").eq(num).toggleClass("click_out").addClass("click_over");
+    $("#flash_pic>div").fadeOut().eq(num).fadeIn();
+   }
+   function ziDong()  //自动切换
+   {
+    if(index==len)
+    {
+     index=0;
+    }
+    showSys(index);
+    index=index+1;
+   }
+   int=setInterval(ziDong,3000);
+   $("#flash_num>li").click(function() //点击切换
+   {
+    var index_num=$("#flash_num>li").index(this);
+    showSys(index_num);
+    index=index_num+1;  //改变全局变量的值，以便鼠标移开的时候能够衔接上
+    //$(".click_out").removeClass("click_over").eq(index).addClass("click_over");
+    //$(".click_out").eq(index).removeClass().addClass("click_over");
+       //alert(index);
+   });
+   $("#flash_outer").mouseover(function()  //移动到上面时停止自动切换
+       {
+        clearInterval(int);
+       });
+   $("#flash_outer").mouseout(function()  //移开时继续自动切换
+       {
+        int=setInterval(ziDong,3000);
+       });
+});
+</script>
+
+
+<div class="logo"><img src="imgs/1.png" /></div>
+<div class="header">
+   <div class="header_0">
+       <div class="header_2"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">辅导员风采</a></div>
+       <div class="header_1"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">辅导员新闻</a></div>
+       <div class="header_1"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">海外培训</a></div>
+       <div class="header_1"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">国内培训</a></div>
+	   <div class="header_1"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">华大博客村</a></div>
+       <div class="header_1"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">资料下载</a></div>
+   </div>
+</div>
+<div class="main">
+    <div class="left">
+        <div class="left_1">
+          <div style="width:610px; height:300px; background:#EBEBEB; position:relative" id="flash_outer">
+     <div style=" position:absolute; left:0px; top:0px; width:610px; height:300px; overflow:hidden" id="flash_pic">
+        <div style="width:610px; height:300px; background-image:url(imgs/1.jpg)"></div>
+        <div style="width:610px; height:300px; background-image:url(imgs/2.jpg)"></div>
+        <div style="width:610px; height:300px; background-image:url(imgs/3.jpg)"></div>
+        <div style="width:610px; height:300px; background-image:url(imgs/4.jpg)"></div>
+     </div>
+     <ul style="position:absolute; right:15px; bottom:55px; height:30px; width:75px;" id="flash_num">
+       <li class="click_over">1</li>
+       <li class="click_out">2</li>
+       <li class="click_out">3</li>
+       <li class="click_out">4</li>
+     </ul>
+  </div>
+
+        </div>
+        <div class="left_2">
+            <div class="left_20"><img src="imgs/2.png" /></div>
+            <div class="left_21">
+                <div class="left_210"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">balabalabala</a></div>
+                <div class="left_2100">
+                    <div class="left_211"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none"><img src="imgs/3.png" /></a></div>
+                    <div class="left_212"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊刚刚到刚刚</a></div>
+               </div>
+            </div>
+                        <div class="left_21">
+                <div class="left_210"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">balabalabala</a></div>
+                <div class="left_2100">
+                    <div class="left_211"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none"><img src="imgs/3.png" /></a></div>
+                    <div class="left_212"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊刚刚到刚刚</a></div>
+               </div>
+            </div>
+
+       </div>  
+            <div class="left_2">
+            <div class="left_20"><img src="imgs/4.png" /></div>
+            <div class="left_21">
+                <div class="left_210"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">balabalabala</a></div>
+                <div class="left_2100">
+                    <div class="left_211"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none"><img src="imgs/3.png" /></a></div>
+                    <div class="left_212"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊刚刚到刚刚</a></div>
+               </div>
+            </div>
+                        <div class="left_21">
+                <div class="left_210"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">balabalabala</a></div>
+                <div class="left_2100">
+                    <div class="left_211"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none"><img src="imgs/3.png" /></a></div>
+                    <div class="left_212"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊刚刚到刚刚</a></div>
+               </div>
+            </div>
+
+       </div>  
+    </div>
+    
+    <div class="right">
+        <div class="right_1">
+            <div class="right_10"><img src="imgs/5.png" /></div>
+            <div class="right_11">
+				<div id="o_1">
+					<div class="right_111" id="01"><p>管理学院</p></div>
+					<div class="right_111" id="02"><p>教育学院</p></div>
+					<div class="right_111" id="03"><p>化学学院</p></div>
+				</div>
+				<div id="o_11" class="bubble">
+					<div id="011" class="hide_text"><p>管理学院</p></div>
+					<div id="021" class="hide_text"><p>教育学院</p></div>
+					<div id="031" class="hide_text"><p>化学学院</p></div>
+				</div>
+                
+				<div id="o_2">
+					<div class="right_111" id="04"><p>马克思主义学院</p></div>
+					<div class="right_111" id="05"><p>历史文化学院</p></div>
+				</div>
+				<div id="o_21" class="bubble">
+					<div class="hide_text" id="041"><p>马克思主义学院</p></div>
+					<div class="hide_text" id="051"><p>历史文化学院</p></div>
+				</div>
+				
+				<div id="o_3">
+					<div class="right_111" id="06"><p>数学与统计学学院</p></div>
+					<div class="right_111" id="07"><p>外国语学院</p></div>
+				</div>
+				<div id="o_31" class="bubble">
+				    <div class="hide_text" id="061"><p>数学与统计学学院</p></div>
+					<div class="hide_text" id="071"><p>外国语学院</p></div>    
+			    </div>
+				
+				<div id="o_4">
+					<div class="right_111" id="08"><p>物理科学与技术学院</p></div>
+					<div class="right_111" id="09"><p>体育学院</p></div>
+				</div>
+				<div id="o_41" class="bubble">
+					<div class="hide_text" id="081"><p>物理科学与技术学院</p></div>
+					<div class="hide_text" id="091"><p>体育学院</p></div>
+				</div>
+				
+				<div id="o_5">
+					<div class="right_111" id="010"><p>国际文化交流学院</p></div>
+					<div class="right_111" id="011"><p>音乐学院</p></div>
+				</div>
+				<div id="o_51" class="bubble">
+				    <div class="hide_text" id="0101"><p>国际文化交流学院</p></div>
+					<div class="hide_text" id="0111"><p>音乐学院</p></div>
+				</div>
+				
+				<div id="o_6">
+					<div class="right_111" id="012"><p>城市与环境科学学院</p></div>
+					<div class="right_111" id="013"><p>社会学院</p></div>
+				</div>
+				<div id="o_61" class="bubble">
+				    <div class="hide_text" id="0121"><p>城市与环境科学学院</p></div>
+					<div class="hide_text" id="0131"><p>社会学院</p></div>
+				</div>
+				
+				<div id="o_7">
+					<div class="right_111" id="014"><p>生命科学学院</p></div>
+					<div class="right_111" id="015"><p>新闻传播学院</p></div>
+				</div>
+				<div id="o_71" class="bubble">
+				    <div class="hide_text" id="0141"><p>生命科学学院</p></div>
+					<div class="hide_text" id="0151"><p>新闻传播学院</p></div>
+				</div>
+				
+				<div id="o_8">
+					<div class="right_111" id="016"><p>经济管理学院</p></div>
+					<div class="right_111" id="017"><p>信息管理学院</p></div>
+				</div>
+				<div id="o_81" class="bubble">
+				    <div class="hide_text" id="0161"><p>经济管理学院</p></div>
+					<div class="hide_text" id="0171"><p>信息管理学院</p></div>
+				</div>
+				
+				<div id="o_9">
+					<div class="right_111" id="018"><p>教育信息技术学院</p></div>
+					<div class="right_111" id="019"><p>心理学院</p></div>
+				</div>
+				<div id="o_91" class="bubble">
+				    <div class="hide_text" id="0181"><p>教育信息技术学院</p></div>
+					<div class="hide_text" id="0191"><p>心理学院</p></div>
+				</div>
+				
+				<div id="o_10">
+					<div class="right_111" id="020"><p>计算机科学学院</p></div>
+					<div class="right_111" id="021"><p>美术学院</p></div>
+				</div>
+				<div id="o_101" class="bubble">
+				    <div class="hide_text" id="0201"><p>计算机科学学院</p></div>
+					<div class="hide_text" id="0211"><p>美术学院</p></div>
+				</div>
+            </div>  
+        </div>
+        <div class="right_2">
+            <div class="right_20"><img src="imgs/6.png" /></div>
+            <div class="right_21"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">balabalabala</a></div>
+            <div class="right_22">
+                <div class="right_221"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none"><img src="imgs/3.png" /></a></div>
+                <div class="right_222"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</a></div>
+            </div>
+                        <div class="right_21"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">balabalabala</a></div>
+            <div class="right_22">
+                <div class="right_221"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none"><img src="imgs/3.png" /></a></div>
+                <div class="right_222"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</a></div>
+            </div>
+
+            <div class="right_21"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">balabalabala</a></div>
+            <div class="right_22">
+                <div class="right_221"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none"><img src="imgs/3.png" /></a></div>
+                <div class="right_222"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</a></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="final">
+        <div class="final_0"><img src="imgs/7.png" /></div>
+        <div class="final_1">
+           <div class="final_11"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">文件下载</a></div>
+           <div class="final_11"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">文件下载</a></div>
+           <div class="final_11"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">文件下载</a></div>
+           <div class="final_11"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">文件下载</a></div>
+           <div class="final_11"><a href="http://www.hao123.com/" target="_blank" style="text-decoration:none">文件下载</a></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
